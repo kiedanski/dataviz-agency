@@ -1,0 +1,136 @@
+{
+    "$schema": "https://vega.github.io/schema/vega/v5.json",
+    "description": "Two bar charts side by side with interaction to filter the second plot by selected month and show individual days.",
+    "width": 900,
+    "height": 250,
+    "padding": 5,
+    "signals": [ {"name": "selectedMonth", "value": 2, "on": [{ "events": "rect:click", "update": "datum.month_field" }] } ],
+    "data": [
+        {
+            "name": "table",
+            "url": "data/data.json",
+            "format": { "type": "json", "parse": { "val": "number", "date": "date" } },
+            "transform": [
+                { "type": "formula", "as": "month_field", "expr": "month(datum.date)" },
+                { "type": "timeunit", "as": [ "month_two_field" ], "field": "date", "units": [ "year", "month" ] }
+            ]
+        },
+	{
+		"name": "projects",
+		"source": "table",
+		"transform": [
+			{ "type": "aggregate", "groupby": ["project"] }, 
+			{ "type": "collect", "sort": { "field": "project" } }
+		      ]
+	},
+        {
+            "name": "aggregatedView",
+            "source": "table",
+            "transform": [
+                { "type": "aggregate", "fields": [ "val" ], "groupby": [ "month_field", "project" ], "ops": [ "sum" ], "as": [ "val_sum" ] },
+                { "type": "impute", "field": "val_sum", "value": 0, "key": "month_field", "keyvals": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ] },
+                { "type": "formula", "as": "month", "expr": "datetime(2024,datum.month_field,1)" },
+                { "type": "stack", "offset": "zero", "groupby": [ "month" ], "field": "val_sum", "sort": { "field": "project" } }
+            ]
+        },
+        {
+            "name": "individualDays",
+            "source": "table",
+            "transform": [
+                { "type": "filter", "expr": "datum.month_field == selectedMonth" },
+                { "type": "formula", "as": "val", "expr": "datum.val === null ? 0 : datum.val" },
+                { "type": "stack", "offset": "zero", "groupby": [ "date" ], "field": "val", "sort": { "field": "project" } }
+            ]
+        },
+        {
+            "name": "days",
+            "transform": [
+                {
+                    "type": "sequence",
+                    "start": { "signal": "datetime(2024, selectedMonth, 1)" },
+                    "stop": { "signal": "datetime(2024, selectedMonth + 1, 1)" },
+                    "step": { "signal": "24 * 60 * 60 * 1000" },
+                    "as": "date"
+                },
+                { "type": "filter", "expr": "month(datum.date) == selectedMonth" }
+            ]
+        }
+    ],
+    "scales": [
+        { "name": "xscale", "type": "band", "domain": { "data": "aggregatedView", "field": "month", "sort": true }, "range": [ 0, 400 ], "padding": 0.05, "round": true },
+        { "name": "yscale", "domain": { "data": "aggregatedView", "field": "y1" }, "nice": true, "type": "linear", "zero": true, "range": [ 200, 0 ] },
+        { "name": "xscaleDays", "type": "band", "domain": {"data": "days", "field": "date" }, "range": [ 0, 400 ], "padding": 0.05, "round": true },
+        { "name": "yscaleDays", "domain": { "field": "y1", "data": "individualDays" }, "nice": true, "range": [ 200, 0 ], "round": true },
+        { "name": "scolor", "type": "ordinal", "range": { "scheme": "category20" }, "domain": { "data": "projects", "field": "project" } }
+    ],
+   "legends": [{"type": "symbol", "title": "Projects", "stroke": "scolor", "direction": "horizontal", "orient": "top", "fill": "scolor"}],
+    "marks": [
+        {
+            "type": "group",
+            "title": "Aggregated View",
+            "encode": { "enter": { "width": { "value": 400 }, "height": { "value": 200 } } },
+            "axes": [
+                { "orient": "bottom", "scale": "xscale", "labelAngle": 270, "labelPadding": 30, "format": "%B", "formatType": "time" },
+                { "orient": "left", "scale": "yscale" }
+            ],
+            "marks": [
+                {
+                    "type": "rect",
+                    "from": { "data": "aggregatedView" },
+                    "encode": {
+                        "enter": {
+                            "x": { "scale": "xscale", "field": "month" },
+                            "width": { "scale": "xscale", "band": 1 },
+                            "y": { "scale": "yscale", "field": "y0" },
+                            "y2": { "scale": "yscale", "field": "y1" },
+                            "fill": { "scale": "scolor", "field": "project" },
+                            "tooltip": { "signal": "{'Project': datum.project, 'Hours': datum.val_sum}" }
+                        },
+                        "update": { "fillOpacity": { "value": 1 } },
+                        "hover": { "fillOpacity": { "value": 0.5 } } },
+                    "tooltip": { "signal": "{'Project': datum.project, 'Notes': datum.notes}" },
+                    "signals": [ { "name": "selectedMonth", "update": "datum.month_field", "on": [ { "events": "rect:click", "update": "datum.month_field" } ] } ]
+                },
+                {
+                  "type": "rule", 
+                  "encode": { 
+                    "enter": {
+                      "y": { "scale": "yscale", "value": 50},
+                      "x": {"scale": "xscale", "value": 0},
+                      "x2": {"scale": "xscale", "value": 400},
+                      "stroke": {"value": "#000"},
+                      "strokeWidth": {"value": 1}
+                      }
+                  }
+                }
+            ]
+        },
+        {
+            "type": "group",
+            "title": "Individual Days",
+            "encode": { "enter": { "x": { "value": 500 }, "width": { "value": 400 }, "height": { "value": 200 } } },
+            "axes": [
+                { "orient": "bottom", "scale": "xscaleDays", "labelAngle": 270, "labelPadding": 15, "format": "%d", "formatType": "time", "field": "date" },
+                { "orient": "left", "scale": "yscaleDays", "tickMinStep": 1 }
+            ],
+            "marks": [
+                {
+                    "type": "rect",
+                    "from": { "data": "individualDays" },
+                    "encode": {
+                        "enter": {
+                            "x": { "scale": "xscaleDays", "field": "date" },
+                            "width": { "scale": "xscaleDays", "band": 1 },
+                            "y": { "scale": "yscaleDays", "field": "y0" },
+                            "y2": { "scale": "yscaleDays", "field": "y1" },
+                            "fill": { "scale": "scolor", "field": "project" },
+                            "tooltip": { "signal": "{'Project': datum.project, 'Notes': datum.notes, 'Hours': datum.val}" }
+                        },
+                        "update": { "fillOpacity": { "value": 1 } },
+                        "hover": { "fillOpacity": { "value": 0.5 } }
+                    }
+                }
+            ]
+        }
+    ]
+}

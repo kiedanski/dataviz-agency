@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="vega.min.js"></script>
+    <script src="vega-embed.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <li><a href="#section4">Section 4</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="hero">
+              <h1>The Data Storytelling Agency</h1>
+
+              <h2>Subscribe and forgett. Puase or cancel anytime.</h2>
+
+            </section>
+            <section id="section1">
+                <h3> Do you need a data expert year round? </h3>
+                <button onclick="toggleContent('section1')">Toggle</button>
+                <div class="alt1">
+                  <div id="vis1"> </div>
+                </div>
+                <div class="alt2 hidden">
+                  <p> The dataset provides a comprehensive overview of hours worked on various projects throughout 2024, focusing on key activities such as data cleaning, visualization, and report compilation. The projects include "Customer Analytics Revamp," "Sales Data Integration," "Marketing Campaign Insights," and "Financial Forecasting Tool." The dataset reveals significant clusters of activity in March and October, indicating periods of intensive work, likely corresponding to the final report preparation and the yearly report completion, respectively. Hours worked range from 1 to 8 per entry, reflecting varying levels of effort across different tasks.
+                  </p>
+                  <p> In March, notable activities include data cleaning and preprocessing, reviewed and optimized code, and initial setup configurations. October showcases increased hours spent on compiling final reports and conducting integration testing, emphasizing the culmination of the year's efforts. This pattern suggests a cyclical workflow with concentrated periods of high productivity aligned with critical project milestones. The distribution of hours worked across different projects and activities highlights the diverse nature of the tasks involved in these projects, demonstrating a well-rounded approach to managing and completing complex data-related tasks within a structured timeline.
+                  </p>
+                </div>
+            </section>
+
+            <section id="section2">
+                <h3> Yet, they are expensive </h3>
+                <button onclick="toggleContent('section2')">Toggle</button>
+                <div class="alt1">Value 1</div>
+                <div class="alt2 hidden">Value 2</div>
+            </section>
+
+            <section id="section3">
+                <button onclick="toggleContent('section3')">Toggle</button>
+                <div class="alt1">Value 1</div>
+                <div class="alt2 hidden">Value 2</div>
+            </section>
+
+            <section id="section4">
+                <button onclick="toggleContent('section4')">Toggle</button>
+                <div class="alt1">Value 1</div>
+                <div class="alt2 hidden">Value 2</div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Your Website</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleContent(sectionId) {
+            const section = document.getElementById(sectionId);
+            const alt1 = section.querySelector('.alt1');
+            const alt2 = section.querySelector('.alt2');
+            alt1.classList.toggle('hidden');
+            alt2.classList.toggle('hidden');
+        }
+
+        var view = {};
+        var spec = "viz/hours-spent.vg.json";
+        vegaEmbed('#vis1', spec).then(function(result) {
+          view = result.view;
+        }).catch(console.error);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,302 @@
+[
+    {
+        "date": "2024-10-14T00:00:00",
+        "val": 8,
+        "project": "Marketing Campaign Insights",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-10-20T00:00:00",
+        "val": 8,
+        "project": "Sales Data Integration",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-03-03T00:00:00",
+        "val": 5,
+        "project": "Sales Data Integration",
+        "notes": "Initial setup and configuration."
+    },
+    {
+        "date": "2024-03-04T00:00:00",
+        "val": 1,
+        "project": "Marketing Campaign Insights",
+        "notes": "Initial setup and configuration."
+    },
+    {
+        "date": "2024-03-07T00:00:00",
+        "val": 1,
+        "project": "Financial Forecasting Tool",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-10-23T00:00:00",
+        "val": 3,
+        "project": "Customer Analytics Revamp",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-03-04T00:00:00",
+        "val": 2,
+        "project": "Sales Data Integration",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-03-21T00:00:00",
+        "val": 2,
+        "project": "Sales Data Integration",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-03-14T00:00:00",
+        "val": 2,
+        "project": "Sales Data Integration",
+        "notes": "Updated documentation."
+    },
+    {
+        "date": "2024-03-24T00:00:00",
+        "val": 1,
+        "project": "Customer Analytics Revamp",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-10-21T00:00:00",
+        "val": 6,
+        "project": "Marketing Campaign Insights",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-03-22T00:00:00",
+        "val": 6,
+        "project": "Sales Data Integration",
+        "notes": "Fixed critical bugs."
+    },
+    {
+        "date": "2024-10-01T00:00:00",
+        "val": 7,
+        "project": "Sales Data Integration",
+        "notes": "Fixed critical bugs."
+    },
+    {
+        "date": "2024-10-17T00:00:00",
+        "val": 8,
+        "project": "Marketing Campaign Insights",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-03-02T00:00:00",
+        "val": 1,
+        "project": "Financial Forecasting Tool",
+        "notes": "Updated documentation."
+    },
+    {
+        "date": "2024-06-26T00:00:00",
+        "val": 2,
+        "project": "Customer Analytics Revamp",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-07-20T00:00:00",
+        "val": 4,
+        "project": "Marketing Campaign Insights",
+        "notes": "Reviewed and optimized code."
+    },
+    {
+        "date": "2024-03-01T00:00:00",
+        "val": 6,
+        "project": "Customer Analytics Revamp",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-02-12T00:00:00",
+        "val": 6,
+        "project": "Marketing Campaign Insights",
+        "notes": "Reviewed and optimized code."
+    },
+    {
+        "date": "2024-08-11T00:00:00",
+        "val": 8,
+        "project": "Marketing Campaign Insights",
+        "notes": "Updated documentation."
+    },
+    {
+        "date": "2024-01-24T00:00:00",
+        "val": 1,
+        "project": "Marketing Campaign Insights",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-10-08T00:00:00",
+        "val": 3,
+        "project": "Marketing Campaign Insights",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-06-05T00:00:00",
+        "val": 2,
+        "project": "Sales Data Integration",
+        "notes": "Fixed critical bugs."
+    },
+    {
+        "date": "2024-10-07T00:00:00",
+        "val": 5,
+        "project": "Sales Data Integration",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-10-19T00:00:00",
+        "val": 4,
+        "project": "Marketing Campaign Insights",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-03-24T00:00:00",
+        "val": 8,
+        "project": "Marketing Campaign Insights",
+        "notes": "Initial setup and configuration."
+    },
+    {
+        "date": "2024-10-23T00:00:00",
+        "val": 2,
+        "project": "Financial Forecasting Tool",
+        "notes": "Fixed critical bugs."
+    },
+    {
+        "date": "2024-10-08T00:00:00",
+        "val": 1,
+        "project": "Customer Analytics Revamp",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-10-15T00:00:00",
+        "val": 3,
+        "project": "Marketing Campaign Insights",
+        "notes": "Reviewed and optimized code."
+    },
+    {
+        "date": "2024-03-24T00:00:00",
+        "val": 8,
+        "project": "Financial Forecasting Tool",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-10-25T00:00:00",
+        "val": 1,
+        "project": "Customer Analytics Revamp",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-03-08T00:00:00",
+        "val": 3,
+        "project": "Customer Analytics Revamp",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-07-04T00:00:00",
+        "val": 3,
+        "project": "Financial Forecasting Tool",
+        "notes": "Reviewed and optimized code."
+    },
+    {
+        "date": "2024-02-13T00:00:00",
+        "val": 1,
+        "project": "Marketing Campaign Insights",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-05-25T00:00:00",
+        "val": 1,
+        "project": "Marketing Campaign Insights",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-03-19T00:00:00",
+        "val": 4,
+        "project": "Customer Analytics Revamp",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-03-01T00:00:00",
+        "val": 7,
+        "project": "Sales Data Integration",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-03-09T00:00:00",
+        "val": 3,
+        "project": "Sales Data Integration",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-03-18T00:00:00",
+        "val": 1,
+        "project": "Sales Data Integration",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-10-28T00:00:00",
+        "val": 7,
+        "project": "Sales Data Integration",
+        "notes": "Fixed critical bugs."
+    },
+    {
+        "date": "2024-10-01T00:00:00",
+        "val": 3,
+        "project": "Customer Analytics Revamp",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-10-26T00:00:00",
+        "val": 1,
+        "project": "Financial Forecasting Tool",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-04-23T00:00:00",
+        "val": 4,
+        "project": "Financial Forecasting Tool",
+        "notes": "Data cleaning and preprocessing."
+    },
+    {
+        "date": "2024-03-03T00:00:00",
+        "val": 5,
+        "project": "Sales Data Integration",
+        "notes": "Conducted integration testing."
+    },
+    {
+        "date": "2024-10-26T00:00:00",
+        "val": 1,
+        "project": "Sales Data Integration",
+        "notes": "Visualized key metrics."
+    },
+    {
+        "date": "2024-03-08T00:00:00",
+        "val": 6,
+        "project": "Marketing Campaign Insights",
+        "notes": "Completed first module development."
+    },
+    {
+        "date": "2024-10-18T00:00:00",
+        "val": 5,
+        "project": "Marketing Campaign Insights",
+        "notes": "Team meeting and review."
+    },
+    {
+        "date": "2024-03-05T00:00:00",
+        "val": 7,
+        "project": "Marketing Campaign Insights",
+        "notes": "Initial setup and configuration."
+    },
+    {
+        "date": "2024-10-09T00:00:00",
+        "val": 2,
+        "project": "Marketing Campaign Insights",
+        "notes": "Reviewed and optimized code."
+    },
+    {
+        "date": "2024-10-18T00:00:00",
+        "val": 5,
+        "project": "Customer Analytics Revamp",
+        "notes": "Completed first module development."
+    }
+]
